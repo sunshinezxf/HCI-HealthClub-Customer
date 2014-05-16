@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd
+           http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-2.0.xsd
+           http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-2.0.xsd">
+
+	<bean id="BaseDAO" class="dao.impl.BaseDAOImpl">
+	</bean>
+	<bean id="VIPDAO" class="dao.impl.VIPDAOImpl">
+		<property name="BaseDAO">
+			<ref bean="BaseDAO" />
+		</property>
+	</bean>
+	<bean id="CardDAO" class="dao.impl.CardDAOImpl">
+		<property name="BaseDAO">
+			<ref bean="BaseDAO" />
+		</property>
+	</bean>
+	<bean id="PayRecordDAO" class="dao.impl.PayRecordDAOImpl">
+		<property name="BaseDAO">
+			<ref bean="BaseDAO" />
+		</property>
+	</bean>
+	<bean id="VIPService" class="service.impl.VIPServiceImpl">
+		<property name="VIPDAO">
+			<ref bean="VIPDAO" />
+		</property>
+	</bean>
+	<bean id="PayRecordService" class="service.impl.PayRecordServiceImpl">
+		<property name="PayRecordDAO">
+			<ref bean="PayRecordDAO" />
+		</property>
+	</bean>
+	<bean id="CardService" class="service.impl.CardServiceImpl">
+		<property name="CardDAO">
+			<ref bean="CardDAO" />
+		</property>
+	</bean>
+	<bean id="Register" class="action.Register">
+		<property name="VIPService">
+			<ref bean="VIPService" />
+		</property>
+	</bean>
+	<bean id="RequestActivate" class="action.RequestActivate">
+		<property name="VIPService">
+			<ref bean="VIPService" />
+		</property>
+	</bean>
+	<bean id="RequestPay" class="action.RequestPay">
+		<property name="VIPService">
+			<ref bean="VIPService" />
+		</property>
+	</bean>
+	<bean id="Login" class="action.Login">
+		<property name="VIPService">
+			<ref bean="VIPService" />
+		</property>
+	</bean>
+	<bean id="ViewPrivacy" class="action.ViewPrivacy">
+		<property name="VIPService">
+			<ref bean="VIPService" />
+		</property>
+	</bean>
+	<bean id="ViewActivity" class="action.ViewActivity">
+		<property name="VIPService">
+			<ref bean="VIPService" />
+		</property>
+	</bean>
+	<bean id="ReserveActivity" class="action.ReserveActivity">
+		<property name="VIPService">
+			<ref bean="VIPService" />
+		</property>
+	</bean>
+	<bean id="CancelActivity" class="action.CancelActivity">
+		<property name="VIPService">
+			<ref bean="VIPService" />
+		</property>
+	</bean>
+	<bean id="action.ViewPay" class="action.ViewPay">
+		<property name="PayRecordService">
+			<ref bean="PayRecordService" />
+		</property>
+	</bean>
+	<bean id="DeleteCard" class="action.DeleteCard">
+		<property name="CardService">
+			<ref bean="CardService" />
+		</property>
+	</bean>
+	<bean id="RemoveCard" class="action.RemoveCard">
+		<property name="CardService">
+			<ref bean="CardService" />
+		</property>
+	</bean>
+	<bean id="action.Activate" class="action.Activate">
+		<property name="CardService">
+			<ref bean="CardService" />
+		</property>
+	</bean>
+	<bean id="action.PayCard" class="action.PayCard">
+		<property name="CardService">
+			<ref bean="CardService" />
+		</property>
+	</bean>
+	<bean id="RequestModifyPrivacy" class="action.RequestModifyPrivacy">
+		<property name="VIPService">
+			<ref bean="VIPService" />
+		</property>
+	</bean>
+	<bean id="ConfirmPrivacy" class="action.ConfirmPrivacy">
+		<property name="VIPService">
+			<ref bean="VIPService" />
+		</property>
+	</bean>
+
+	<bean id="Business" class="time.Business" />
+	<bean name="timeTask" class="org.springframework.scheduling.quartz.JobDetailBean">
+		<property name="jobClass" value="time.Business" />
+	</bean>
+
+	<!-- 触发器 -->
+	<bean id="cronTrigger" class="org.springframework.scheduling.quartz.CronTriggerBean">
+
+		<!-- 指向我们的任务 -->
+		<property name="jobDetail" ref="timeTask" />
+
+		<!-- 每天下午16点50分到55分,每分钟运行一次 -->
+		<property name="cronExpression" value="0 1 1 * * ?" />
+	</bean>
+
+
+	<!-- 调度器 -->
+	<bean class="org.springframework.scheduling.quartz.SchedulerFactoryBean">
+		<property name="triggers">
+			<list>
+				<!-- 触发器列表 -->
+				<ref bean="cronTrigger" />
+			</list>
+		</property>
+		<property name="configLocation" value="classpath:quartz.properties" />
+	</bean>
+</beans>

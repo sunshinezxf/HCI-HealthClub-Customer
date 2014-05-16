@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+	<package name="struts2" namespace="/action" extends="struts-default">
+		<action name="register" class="action.Register">
+			<result name="success">/member/login.jsp</result>
+			<result name="failure">/member/register.jsp</result>
+		</action>
+		<action name="login" class="action.Login">
+			<result name="success">/member/index.jsp</result>
+			<result name="failure">/member/login.jsp</result>
+		</action>
+		<action name="viewcard" class="action.ViewCard">
+			<result name="success">/member/viewcard.jsp</result>
+		</action>
+		<action name="viewprivacy" class="action.ViewPrivacy">
+			<result name="success">/member/viewprivacy.jsp</result>
+			<result name="failure"></result>
+		</action>
+		<action name="viewactivity" class="action.ViewActivity">
+			<result name="success">/member/viewactivity.jsp</result>
+		</action>
+		<action name="reserveactivity" class="action.ReserveActivity">
+			<result name="success">/member/success.jsp</result>
+			<result name="failure">/member/failure.jsp</result>
+		</action>
+		<action name="cancelactivity" class="action.CancelActivity">
+			<result name="success">/member/success.jsp</result>
+			<result name="failure">/member/failure.jsp</result>
+		</action>
+		<action name="viewpay" class="action.ViewPay">
+			<result name="success">/member/viewpay.jsp</result>
+			<result name="failure">/member/index.jsp</result>
+		</action>
+		<action name="withdraw" class="action.Withdraw">
+			<result name="success">/index.jsp</result>
+			<result name="failure">/member/index.jsp</result>
+		</action>
+		<action name="applysg" class="action.ApplySGVIP">
+			<result name="success">/member/applysg.jsp</result>
+			<result name="failure">/member/viewcard.jsp</result>
+		</action>
+		<action name="requestactivate" class="action.RequestActivate">
+			<result name="success">/member/requestactivate.jsp</result>
+			<result name="failure">/member/viewcard.jsp</result>
+		</action>
+		<action name="requestmodifyprivacy" class="action.RequestModifyPrivacy">
+			<result name="success">/member/modifyprivacy.jsp</result>
+		</action>
+		<action name="confirmprivacy" class="action.ConfirmPrivacy">
+			<result name="success">/member/success.jsp</result>
+			<result name="failure">/member/failure.jsp</result>
+		</action>
+		<action name="activate" class="action.Activate">
+			<result name="success">/member/success.jsp</result>
+			<result name="failure">/member/failure.jsp</result>
+		</action>
+		<action name="requestpay" class="action.RequestPay">
+			<result name="success">/member/requestpay.jsp</result>
+			<result name="failure">/member/viewcard.jsp</result>
+		</action>
+		<action name="pay" class="action.PayCard">
+			<result name="success">/member/success.jsp</result>
+			<result name="failure">/member/failure.jsp</result>
+		</action>
+		<action name="deletecard" class="DeleteCard">
+			<result name="success">/member/success.jsp</result>
+			<result name="failure">/member/failure.jsp</result>
+		</action>
+		<action name="quit" class="action.Quit">
+			<result name="success">/index.jsp</result>
+		</action>
+
+		<action name="attendantlogin" class="AttendantLogin">
+			<result name="success">/attendant/index.jsp</result>
+			<result name="failure">/attendant/login.jsp</result>
+		</action>
+		<action name="showmember" class="ShowMember">
+			<result name="success">/attendant/showmember.jsp</result>
+			<result name="failure">/attendant/index.jsp</result>
+		</action>
+		<action name="viewmember" class="ViewMember">
+			<result name="success">/attendant/viewmember.jsp</result>
+			<result name="failure">/attendant/index.jsp</result>
+		</action>
+		<action name="deletemember" class="DeleteMember">
+			<result name="success">/attendant/success.jsp</result>
+			<result name="failure">/attendant/failure.jsp</result>
+		</action>
+		<action name="requestmodifymember" class="RequestModifyMember">
+			<result name="success">/attendant/modifymember.jsp</result>
+			<result name="failure">/attendant/failure.jsp</result>
+		</action>
+		<action name="confirmmember" class="ConfirmMember">
+			<result name="success">/attendant/success.jsp</result>
+			<result name="failure">/attendant/failure.jsp</result>
+		</action>
+		<action name="showactivity" class="ShowActivity">
+			<result name="success">/attendant/showactivity.jsp</result>
+		</action>
+		<action name="requestmodifyactivity" class="RequestModifyActivity">
+			<result name="success">/attendant/viewactivity.jsp</result>
+		</action>
+		<action name="modifyactivity" class=""></action>
+		<action name="requestaddactivity" class="RequestAddActivity">
+			<result name="success">/attendant/addactivity.jsp</result>
+		</action>
+		<action name="rmcard" class="RemoveCard">
+			<result name="success">/attendant/success.jsp</result>
+			<result name="failure">/attendant/failure.jsp</result>
+		</action>
+		<action name="addactivity" class="action.AddActivity">
+			<result name="success">/attendant/showactivity.jsp</result>
+			<result name="failure">/attendant/showactivity.jsp</result>
+		</action>
+		<action name="sumvip" class="action.SumVIP">
+			<result name="success">/manager/vipview.jsp</result>
+			<result name="failure">/manager/index.jsp</result>
+		</action>
+		<action name="sumclub" class="action.SumHealthClub">
+			<result name="success">/manager/clubview.jsp</result>
+			<result name="failure">/manager/index.jsp</result>
+		</action>
+	</package>
+</struts>
