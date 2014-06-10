@@ -53,8 +53,10 @@
 			<span>Please input your login username and password</span>
 			<input type="text" class="form-control" placeholder="Login Username"
 				name="username" />
+			<span id="username_span"></span>
 			<input type="password" class="form-control"
 				placeholder="Login Password" name="password" />
+			<span id="passwd_span"></span>
 			<button class="btn btn-lg btn-primary btn-block button-commit"
 				type="submit">Login</button>
 		</s:form>
