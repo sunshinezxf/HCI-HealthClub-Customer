@@ -58,7 +58,7 @@ html {
 	-webkit-text-size-adjust: 100%;
 	-ms-text-size-adjust: 100%;
 	background-size: 100% 100%;
-	background: url('../material/bg.jpg') no-repeat;
+	background: url('../material/bg-normal.jpg') no-repeat;
 	background-attachment: fixed;
 }
 
