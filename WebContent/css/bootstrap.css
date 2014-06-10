@@ -14,11 +14,41 @@ audio,canvas,video {
 	display: inline-block;
 }
 
-audio:not([controls]){
-display: none;
-height: 0;
-}
+audio
 
+
+:not
+
+ 
+
+(
+[
+controls
+]
+
+ 
+
+){
+display
+
+
+:
+
+ 
+
+none
+
+
+;
+height
+
+
+:
+
+ 
+
+0;
+}
 [hidden],template {
 	display: none;
 }
@@ -30,6 +60,30 @@ html {
 	background-size: 100% 100%;
 	background: url('../material/bg.jpg') no-repeat;
 	background-attachment: fixed;
+}
+
+@media screen and (max-width: 1280px) {
+	html {
+		background: url('../material/bg-normal.jpg') no-repeat;
+	}
+}
+
+@media screen and (min-width: 1281px) {
+	html {
+		background: url('../material/bg-big.jpg') no-repeat;
+	}
+}
+
+@media screen and (max-height: 768px) {
+	html {
+		background: url('../material/bg-normal.jpg') no-repeat;
+	}
+}
+
+@media screen and (min-height: 801px) {
+	html {
+		background: url('../material/bg-big.jpg') no-repeat;
+	}
 }
 
 body {
@@ -115,25 +169,61 @@ img {
 svg
 
 
+
+
+
+
+
+
 :not
 
+
+
+
  
+
+
+
 
 (
 :root
 
+
+
+
  
+
+
+
 
 )
 {
 overflow
 
 
+
+
+
+
+
+
 :
+
+
+
 
  
 
+
+
+
 hidden
+
+
+
+
+
+
 
 
 ;
@@ -290,7 +380,7 @@ body {
 	font-size: 14px;
 	line-height: 1.428571429;
 	color: #333333;
-		background-color: transparent;
+	background-color: transparent;
 }
 
 input,button,select,textarea {
@@ -3304,44 +3394,98 @@ input[type="submit"].btn-block,input[type="reset"].btn-block,input[type="button"
 .btn
 
 
+
+
+
+
+
+
 :not
 
+
+
+
  
+
+
+
 
 (
 :first-child
 
+
+
+
  
+
+
+
 
 )
 :not
 
+
+
+
  
+
+
+
 
 (
 :last-child
 
+
+
+
  
+
+
+
 
 )
 :not
 
+
+
+
  
+
+
+
 
 (
 .dropdown-toggle
 
 
+
+
+
 	
+
+
+
 
 )
 {
 border-radius
 
 
+
+
+
+
+
+
 :
 
+
+
+
  
+
+
+
 
 0;
 }
@@ -3354,44 +3498,104 @@ border-radius
 .btn
 
 
+
+
+
+
+
+
 :first-child
+
+
+
+
+
+
 
 
 :not
 
+
+
+
  
+
+
+
 
 (
 :last-child
 
+
+
+
  
+
+
+
 
 )
 :not
 
+
+
+
  
+
+
+
 
 (
 .dropdown-toggle
 
+
+
+
  
+
+
+
 
 )
 {
 border-top-right-radius
 
 
+
+
+
+
+
+
 :
 
+
+
+
  
+
+
+
 
 0;
 border-bottom-right-radius
 
 
+
+
+
+
+
+
 :
 
+
+
+
  
+
+
+
 
 0;
 }
@@ -3400,17 +3604,41 @@ border-bottom-right-radius
 .btn
 
 
+
+
+
+
+
+
 :last-child
+
+
+
+
+
+
 
 
 :not
 
+
+
+
  
+
+
+
 
 (
 :first-child
 
+
+
+
  
+
+
+
 
 ),
 .btn-group
@@ -3418,32 +3646,74 @@ border-bottom-right-radius
 .dropdown-toggle
 
 
+
+
+
+
+
+
 :not
+
+
+
 
 
 	
 
+
+
+
 (
 :first-child
 
+
+
+
  
+
+
+
 
 )
 {
 border-bottom-left-radius
 
 
+
+
+
+
+
+
 :
 
+
+
+
  
+
+
+
 
 0;
 border-top-left-radius
 
 
+
+
+
+
+
+
 :
 
+
+
+
  
+
+
+
 
 0;
 }
@@ -3567,33 +3837,75 @@ border-top-left-radius
 .btn
 
 
+
+
+
+
+
+
 :not
 
+
+
+
  
+
+
+
 
 (
 :first-child
 
+
+
+
  
+
+
+
 
 )
 :not
 
+
+
+
  
+
+
+
 
 (
 :last-child
 
+
+
+
  
+
+
+
 
 )
 {
 border-radius
 
 
+
+
+
+
+
+
 :
 
+
+
+
  
+
+
+
 
 0;
 }
@@ -3602,46 +3914,112 @@ border-radius
 .btn
 
 
+
+
+
+
+
+
 :first-child
+
+
+
+
+
+
 
 
 :not
 
+
+
+
  
+
+
+
 
 (
 :last-child
 
+
+
+
  
+
+
+
 
 )
 {
 border-top-right-radius
 
 
+
+
+
+
+
+
 :
+
+
+
 
  
 
+
+
+
 4
 px
+
+
+
+
+
+
 
 
 ;
 border-bottom-right-radius
 
 
+
+
+
+
+
+
 :
 
+
+
+
  
+
+
+
 
 0;
 border-bottom-left-radius
 
 
+
+
+
+
+
+
 :
 
+
+
+
  
+
+
+
 
 0;
 }
@@ -3650,46 +4028,112 @@ border-bottom-left-radius
 .btn
 
 
+
+
+
+
+
+
 :last-child
+
+
+
+
+
+
 
 
 :not
 
+
+
+
  
+
+
+
 
 (
 :first-child
 
+
+
+
  
+
+
+
 
 )
 {
 border-top-right-radius
 
 
+
+
+
+
+
+
 :
 
+
+
+
  
+
+
+
 
 0;
 border-bottom-left-radius
 
 
+
+
+
+
+
+
 :
+
+
+
 
  
 
+
+
+
 4
 px
+
+
+
+
+
+
 
 
 ;
 border-top-left-radius
 
 
+
+
+
+
+
+
 :
 
+
+
+
  
+
+
+
 
 0;
 }
@@ -3795,85 +4239,193 @@ textarea.input-group-sm>.form-control,textarea.input-group-sm>.input-group-addon
 .input-group-addon
 
 
+
+
+
+
+
+
 :not
 
+
+
+
  
+
+
+
 
 (
 :first-child
 
+
+
+
  
+
+
+
 
 )
 :not
 
+
+
+
  
+
+
+
 
 (
 :last-child
 
+
+
+
  
+
+
+
 
 ),
 .input-group-btn
 
 
+
+
+
+
+
+
 :not
+
+
+
 
 
 	
 
+
+
+
 (
 :first-child
 
+
+
+
  
+
+
+
 
 )
 :not
 
+
+
+
  
+
+
+
 
 (
 :last-child
 
+
+
+
  
+
+
+
 
 ),
 .input-group
 
+
+
+
  
+
+
+
 
 .form-control
 
 
+
+
+
+
+
+
 :not
 
+
+
+
  
+
+
+
 
 (
 :first-child
 
 
+
+
+
 	
+
+
+
 
 )
 :not
 
+
+
+
  
+
+
+
 
 (
 :last-child
 
+
+
+
  
+
+
+
 
 )
 {
 border-radius
 
 
+
+
+
+
+
+
 :
 
+
+
+
  
+
+
+
 
 0;
 }
@@ -3914,9 +4466,21 @@ border-radius
 
 .input-group
 
+
+
+
  
 
+
+
+
 .form-control
+
+
+
+
+
+
 
 
 :first-child
@@ -3924,9 +4488,21 @@ border-radius
 .input-group-addon
 
 
+
+
+
+
+
+
 :first-child
 ,
 .input-group-btn
+
+
+
+
+
+
 
 
 :first-child
@@ -3934,6 +4510,12 @@ border-radius
 .btn
 ,
 .input-group-btn
+
+
+
+
+
+
 
 
 :first-child
@@ -3943,47 +4525,107 @@ border-radius
 .input-group-btn
 
 
+
+
+
+
+
+
 :last-child
 >
 .btn
 
 
+
+
+
+
+
+
 :not
+
+
+
 
 
 	
 
+
+
+
 (
 :last-child
 
+
+
+
  
+
+
+
 
 )
 :not
 
+
+
+
  
+
+
+
 
 (
 .dropdown-toggle
 
+
+
+
  
+
+
+
 
 )
 {
 border-top-right-radius
 
 
+
+
+
+
+
+
 :
 
+
+
+
  
+
+
+
 
 0;
 border-bottom-right-radius
 
 
+
+
+
+
+
+
 :
 
+
+
+
  
+
+
+
 
 0;
 }
@@ -3993,9 +4635,21 @@ border-bottom-right-radius
 
 .input-group
 
+
+
+
  
 
+
+
+
 .form-control
+
+
+
+
+
+
 
 
 :last-child
@@ -4003,9 +4657,21 @@ border-bottom-right-radius
 .input-group-addon
 
 
+
+
+
+
+
+
 :last-child
 ,
 .input-group-btn
+
+
+
+
+
+
 
 
 :last-child
@@ -4013,6 +4679,12 @@ border-bottom-right-radius
 .btn
 ,
 .input-group-btn
+
+
+
+
+
+
 
 
 :last-child
@@ -4022,37 +4694,85 @@ border-bottom-right-radius
 .input-group-btn
 
 
+
+
+
+
+
+
 :first-child
 >
 .btn
 
 
+
+
+
+
+
+
 :not
+
+
+
 
 
 	
 
+
+
+
 (
 :first-child
 
+
+
+
  
+
+
+
 
 )
 {
 border-bottom-left-radius
 
 
+
+
+
+
+
+
 :
 
+
+
+
  
+
+
+
 
 0;
 border-top-left-radius
 
 
+
+
+
+
+
+
 :
 
+
+
+
  
+
+
+
 
 0;
 }
