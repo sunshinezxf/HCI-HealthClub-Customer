@@ -7,7 +7,7 @@
 }
 
 .grid-layout {
-	width: 95%;
+	width: 75%;
 	position: relative;
 	background-color: #ffffdf;
 	opacity: 0.85;
@@ -50,13 +50,17 @@
 }
 
 .form-register input[type="text"] {
+	float: left;
 	margin: 10px;
 	border-radius: 3px;
+	width: 75%;
 }
 
 .form-register input[type="password"] {
+	float: left;
 	margin: 10px;
 	border-radius: 3px;
+	width: 75%;
 }
 
 .form-register-gender {
@@ -139,4 +143,17 @@ footer {
 
 .form-activity {
 	margin: 5px;
+}
+
+.right_span {
+	position: relative;
+	font-size: 16px;
+	height: auto;
+	padding: 10px;
+	float: left;
+	margin: 10px;
+}
+
+.login {
+	width: 75%;
 }

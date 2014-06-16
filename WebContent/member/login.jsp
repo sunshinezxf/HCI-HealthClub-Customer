@@ -52,14 +52,17 @@
 			method="post" namespace="/action">
 			<span>Please input your login username and password</span>
 			<input type="text" class="form-control" placeholder="Login Username"
-				name="username" />
-			<span id="username_span"></span>
+				name="username" id="username" onkeypress=keypress() onchange=checkUsername() />
+			<span id="username_span" class="right_span"></span>
 			<input type="password" class="form-control"
 				placeholder="Login Password" name="password" />
 			<span id="passwd_span"></span>
-			<button class="btn btn-lg btn-primary btn-block button-commit" disabled="disabled"
-				type="submit">Login</button>
+			<button class="btn btn-lg btn-primary btn-block button-commit login"
+				disabled="disabled" type="submit">Login</button>
 		</s:form>
 	</div>
+	<script src="<s:url value="/js/validate/validate.js"></s:url>"
+		type="text/javascript">
+	</script>
 </body>
 </html>
