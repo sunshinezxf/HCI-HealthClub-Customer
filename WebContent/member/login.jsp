@@ -57,7 +57,7 @@
 			<input type="password" class="form-control"
 				placeholder="Login Password" name="password" />
 			<span id="passwd_span"></span>
-			<button class="btn btn-lg btn-primary btn-block button-commit"
+			<button class="btn btn-lg btn-primary btn-block button-commit" disabled="disabled"
 				type="submit">Login</button>
 		</s:form>
 	</div>
