@@ -52,7 +52,8 @@
 			method="post" namespace="/action">
 			<span>Please input your login username and password</span>
 			<input type="text" class="form-control" placeholder="Login Username"
-				name="username" id="username" onkeypress=keypress() onchange=checkUsername() />
+				name="username" id="username" onkeypress=keypress()
+				onchange=checkUsername() />
 			<span id="username_span" class="right_span"></span>
 			<input type="password" class="form-control"
 				placeholder="Login Password" name="password" />
@@ -63,6 +64,7 @@
 	</div>
 	<script src="<s:url value="/js/validate/validate.js"></s:url>"
 		type="text/javascript">
+		
 	</script>
 </body>
 </html>

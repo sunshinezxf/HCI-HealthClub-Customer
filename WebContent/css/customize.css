@@ -53,14 +53,14 @@
 	float: left;
 	margin: 10px;
 	border-radius: 3px;
-	width: 75%;
+	width: 70%;
 }
 
 .form-register input[type="password"] {
 	float: left;
 	margin: 10px;
 	border-radius: 3px;
-	width: 75%;
+	width: 70%;
 }
 
 .form-register-gender {
@@ -155,5 +155,10 @@ footer {
 }
 
 .login {
-	width: 75%;
+	width: 70%;
+}
+
+.register {
+	width: 15%;
+	float: left;
 }

@@ -8,7 +8,9 @@
            http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-2.0.xsd">
 
 	<bean id="BaseDAO" class="dao.impl.BaseDAOImpl">
+	
 	</bean>
+	
 	<bean id="VIPDAO" class="dao.impl.VIPDAOImpl">
 		<property name="BaseDAO">
 			<ref bean="BaseDAO" />
