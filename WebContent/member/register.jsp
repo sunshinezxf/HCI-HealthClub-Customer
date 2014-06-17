@@ -39,13 +39,15 @@
 			<span>Please fill you information</span>
 			<s:div cssClass="box">
 				<input type="text" class="form-control" placeholder="Name"
-					name="name" style="ime-mode: disabled"
-					onkeyup="this.value=this.value.replace(/[\u4e00-\u9fa5]/g,'')" />
+					name="name" id="reg_name" style="ime-mode: disabled"
+					onkeyup="this.value=this.value.replace(/[\u4e00-\u9fa5]/g,'')"
+					onchange=checkName() />
 				<span id="reg_name_span"></span>
 			</s:div>
 			<s:div cssClass="box">
 				<div class="form-register-gender">
-					<input type="radio" name="gender" value="male" />&nbsp; &nbsp;Male
+					<input type="radio" name="gender" value="male" checked="checked" />&nbsp;
+					&nbsp;Male
 				</div>
 				<div class="form-register-gender">
 					<input type="radio" name="gender" value="female" />&nbsp;
@@ -55,30 +57,37 @@
 			</s:div>
 			<s:div cssClass="box">
 				<input type="text" class="form-control" placeholder="Cellphone"
-					name="phone" />
+					name="phone" id="reg_phone" onchange=checkPhone() />
 				<span id="reg_phone_span"></span>
 			</s:div>
 			<s:div cssClass="box">
-				<input type="text" class="form-control" placeholder="Age" name="age" />
+				<input type="text" class="form-control" placeholder="Age" name="age"
+					id="reg_age" onchange=checkAge() />
 				<span id="reg_age_span"></span>
 			</s:div>
 			<s:div cssClass="box">
 				<input type="text" class="form-control" placeholder="Address"
-					name="address">
+					name="address" id="reg_address" onchange=checkAddress() />
 				<span id="reg_addr_span"></span>
 			</s:div>
 			<s:div cssClass="box">
 				<input type="text" class="form-control" placeholder="Credit Card"
-					name="credit" />
+					name="credit" id="reg_credit" onchange=checkCredit() />
 				<span id="reg_credit_span"></span>
 			</s:div>
 			<s:div cssClass="box">
 				<input type="password" class="form-control" placeholder="Password"
-					name="password" />
+					name="password" id="reg_passwd" onchange=checkPassword() />
 				<span id="reg_passwd_span"></span>
 			</s:div>
+			<s:div cssClass="box">
+				<input type="password" class="form-control"
+					placeholder="Confirm Password" id="con_reg_passwd"
+					oninput=checkConfirm() />
+				<span id="con_reg_passwd_span"></span>
+			</s:div>
 			<button class="btn btn-lg btn-primary btn-block button-commit rg"
-				type="submit" disabled="disabled">Register</button>
+				type="submit" disabled="disabled" id="rgbtn">Register</button>
 		</s:form>
 	</div>
 	<script src="<s:url value="/js/validate/reg_validate.js"></s:url>"

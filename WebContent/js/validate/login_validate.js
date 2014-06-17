@@ -62,5 +62,5 @@ function validate_password() {
 	if (password != null && password != "")
 		return true;
 	return false;
-
 }
+
