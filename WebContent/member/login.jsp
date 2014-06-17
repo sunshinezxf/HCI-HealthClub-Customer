@@ -55,12 +55,13 @@
 				name="username" id="username" onkeypress=keypress()
 				onchange=checkUsername() />
 			<span id="username_span" class="right_span"></span>
+			<hr />
 			<input type="password" class="form-control"
-				placeholder="Login Password" name="password" />
+				placeholder="Login Password" name="password" id="password" oninput=checkPassword() />
 			<span id="passwd_span"></span>
 			<button class="btn btn-lg btn-primary btn-block button-commit login"
-				disabled="disabled" type="submit">Login</button>
-			</s:form>
+				disabled="disabled" type="submit" id="lgbtn">Login</button>
+		</s:form>
 	</div>
 	<script src="<s:url value="/js/validate/validate.js"></s:url>"
 		type="text/javascript">
