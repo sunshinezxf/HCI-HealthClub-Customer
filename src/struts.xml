@@ -34,6 +34,10 @@
 			<result name="success">/member/viewpay.jsp</result>
 			<result name="failure">/member/index.jsp</result>
 		</action>
+		<action name="requestwithdraw" class="action.RequestWithdraw">
+			<result name="success">/member/confirmwithdraw.jsp</result>
+			<result name="failure">/member/failure.jsp</result>
+		</action>
 		<action name="withdraw" class="action.Withdraw">
 			<result name="success">/index.jsp</result>
 			<result name="failure">/member/index.jsp</result>

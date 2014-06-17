@@ -8,9 +8,9 @@
            http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-2.0.xsd">
 
 	<bean id="BaseDAO" class="dao.impl.BaseDAOImpl">
-	
+
 	</bean>
-	
+
 	<bean id="VIPDAO" class="dao.impl.VIPDAOImpl">
 		<property name="BaseDAO">
 			<ref bean="BaseDAO" />
@@ -112,6 +112,16 @@
 		</property>
 	</bean>
 	<bean id="ConfirmPrivacy" class="action.ConfirmPrivacy">
+		<property name="VIPService">
+			<ref bean="VIPService" />
+		</property>
+	</bean>
+	<bean id="RequestWithdraw" class="action.RequestWithdraw">
+		<property name="VIPService">
+			<ref bean="VIPService" />
+		</property>
+	</bean>
+	<bean id="Withdraw" class="action.Withdraw">
 		<property name="VIPService">
 			<ref bean="VIPService" />
 		</property>
