@@ -60,7 +60,7 @@
 			<span id="passwd_span"></span>
 			<button class="btn btn-lg btn-primary btn-block button-commit login"
 				disabled="disabled" type="submit">Login</button>
-		</s:form>
+			</s:form>
 	</div>
 	<script src="<s:url value="/js/validate/validate.js"></s:url>"
 		type="text/javascript">
