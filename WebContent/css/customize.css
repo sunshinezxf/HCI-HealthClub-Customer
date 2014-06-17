@@ -65,7 +65,7 @@
 
 .form-register-gender {
 	float: left;
-	width: 10%;
+	width: 35%;
 }
 
 .form-register input[type="radio"] {
@@ -154,11 +154,15 @@ footer {
 	margin: 10px;
 }
 
-.login {
+.login, .rg {
 	width: 70%;
 }
 
 .register {
-	width: 15%;
+	width: 100%;
 	float: left;
+}
+
+.box {
+	width: 100%;
 }

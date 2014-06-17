@@ -37,28 +37,53 @@
 		<s:form cssClass="form-register" action="register" name="register"
 			method="post" namespace="/action">
 			<span>Please fill you information</span>
-			<input type="text" class="form-control" placeholder="Name"
-				name="name" />
-			<div class="form-register-gender">
-				<input type="radio" name="gender" value="male" />&nbsp; &nbsp;Male
-			</div>
-			<div class="form-register-gender">
-				<input type="radio" name="gender" value="female" />&nbsp;
-				&nbsp;Female
-			</div>
-			<input type="text" class="form-control" placeholder="Cellphone"
-				name="phone" />
-			<input type="text" class="form-control" placeholder="Age" name="age" />
-			<input type="text" class="form-control" placeholder="Address"
-				name="address">
-			<input type="text" class="form-control" placeholder="Credit Card"
-				name="credit" />
-			<input type="password" class="form-control" placeholder="Password"
-				name="password" />
-			<button class="btn btn-lg btn-primary btn-block button-commit"
-				type="submit">Register</button>
+			<s:div cssClass="box">
+				<input type="text" class="form-control" placeholder="Name"
+					name="name" style="ime-mode: disabled"
+					onkeyup="this.value=this.value.replace(/[\u4e00-\u9fa5]/g,'')" />
+				<span id="reg_name_span"></span>
+			</s:div>
+			<s:div cssClass="box">
+				<div class="form-register-gender">
+					<input type="radio" name="gender" value="male" />&nbsp; &nbsp;Male
+				</div>
+				<div class="form-register-gender">
+					<input type="radio" name="gender" value="female" />&nbsp;
+					&nbsp;Female
+				</div>
+				<span id="reg_gender_span"></span>
+			</s:div>
+			<s:div cssClass="box">
+				<input type="text" class="form-control" placeholder="Cellphone"
+					name="phone" />
+				<span id="reg_phone_span"></span>
+			</s:div>
+			<s:div cssClass="box">
+				<input type="text" class="form-control" placeholder="Age" name="age" />
+				<span id="reg_age_span"></span>
+			</s:div>
+			<s:div cssClass="box">
+				<input type="text" class="form-control" placeholder="Address"
+					name="address">
+				<span id="reg_addr_span"></span>
+			</s:div>
+			<s:div cssClass="box">
+				<input type="text" class="form-control" placeholder="Credit Card"
+					name="credit" />
+				<span id="reg_credit_span"></span>
+			</s:div>
+			<s:div cssClass="box">
+				<input type="password" class="form-control" placeholder="Password"
+					name="password" />
+				<span id="reg_passwd_span"></span>
+			</s:div>
+			<button class="btn btn-lg btn-primary btn-block button-commit rg"
+				type="submit" disabled="disabled">Register</button>
 		</s:form>
 	</div>
-
+	<script src="<s:url value="/js/validate/reg_validate.js"></s:url>"
+		type="text/javascript">
+		
+	</script>
 </body>
 </html>

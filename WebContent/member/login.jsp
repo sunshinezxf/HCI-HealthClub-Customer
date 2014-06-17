@@ -51,19 +51,23 @@
 		<s:form cssClass="form-register" action="login" name="login"
 			method="post" namespace="/action">
 			<span>Please input your login username and password</span>
-			<input type="text" class="form-control" placeholder="Login Username"
-				name="username" id="username" onkeypress=keypress()
-				onchange=checkUsername() />
-			<span id="username_span" class="right_span"></span>
-			<hr />
-			<input type="password" class="form-control"
-				placeholder="Login Password" name="password" id="password" oninput=checkPassword() />
-			<span id="passwd_span"></span>
+			<s:div cssClass="box">
+				<input type="text" class="form-control" placeholder="Login Username"
+					name="username" id="username" onkeypress=keypress()
+					onchange=checkUsername() />
+				<span id="username_span" class="right_span"></span>
+			</s:div>
+			<s:div cssClass="box">
+				<input type="password" class="form-control"
+					placeholder="Login Password" name="password" id="password"
+					oninput=checkPassword() />
+				<span id="passwd_span"></span>
+			</s:div>
 			<button class="btn btn-lg btn-primary btn-block button-commit login"
 				disabled="disabled" type="submit" id="lgbtn">Login</button>
 		</s:form>
 	</div>
-	<script src="<s:url value="/js/validate/validate.js"></s:url>"
+	<script src="<s:url value="/js/validate/login_validate.js"></s:url>"
 		type="text/javascript">
 		
 	</script>
