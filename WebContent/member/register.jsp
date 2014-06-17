@@ -1,3 +1,4 @@
+<%@page import="util.Prompt"%>
 <%@ page language="java" contentType="text/html; utf-8"
 	pageEncoding="utf-8"%>
 <%@ taglib prefix="s" uri="/struts-tags"%>
@@ -33,6 +34,24 @@
 	</div>
 	<div class="grid-layout module">
 		<strong>Register</strong>
+		<%
+			Prompt prompt = (Prompt) request.getAttribute("prompt");
+			if (prompt != null) {
+				if (prompt.getState() == true) {
+		%>
+		<div class="alert alert-success">
+			<h1><%=prompt.getMessage()%></h1>
+		</div>
+		<%
+			} else {
+		%>
+		<div class="alert alert-danger">
+			<h1><%=prompt.getMessage()%></h1>
+		</div>
+		<%
+			}
+			}
+		%>
 		<hr>
 		<s:form cssClass="form-register" action="register" name="register"
 			method="post" namespace="/action">

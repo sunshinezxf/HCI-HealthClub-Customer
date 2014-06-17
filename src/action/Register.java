@@ -7,6 +7,7 @@ import model.VIP;
 import service.VIPService;
 import util.Encryption;
 import util.IDGenerator;
+import util.Prompt;
 
 @SuppressWarnings("serial")
 public class Register extends BaseAction {
@@ -47,14 +48,17 @@ public class Register extends BaseAction {
 		vip.setCreditCard(new CreditCard(credit));
 		vip.setPassword(Encryption.md5(password));
 		vip.setAddress(address);
-		boolean status = vipService.registerVIP(vip);
-		if (status) {
+		Prompt pro = vipService.registerVIP(vip);
+		if (pro.getState()) {
 			session.put("username", vip.getUsername());
-			session.put("prompt", "Welcome to Health Club, your username is "
+			pro.setMessage("Welcome to Health Club, your username is "
 					+ vip.getUsername());
+			request.setAttribute("prompt", pro);
 			return "success";
+		} else {
+			request.setAttribute("prompt", pro);
+			return "failure";
 		}
-		return "failure";
 	}
 
 	public String getName() {

@@ -7,6 +7,7 @@ import model.VIP;
 import model.card.HomeVIPCard;
 import model.card.VIPCard;
 import service.VIPService;
+import util.Prompt;
 import dao.VIPDAO;
 
 public class VIPServiceImpl implements VIPService {
@@ -20,13 +21,13 @@ public class VIPServiceImpl implements VIPService {
 		this.vipDAO = vipDAO;
 	}
 
-	public boolean registerVIP(VIP vip) {
+	public Prompt registerVIP(VIP vip) {
 		if (vip.getUsername() == null || vip.getUsername().equals(""))
-			return false;
+			return new Prompt(false, "username cannot be null");
 		if (vip.getName() == null || vip.getName().equals(""))
-			return false;
+			return new Prompt(false, "name cannot be null");
 		if (vip.getAge() < 10 || vip.getAge() > 60)
-			return false;
+			return new Prompt(false, "age should between 10~60");
 		return vipDAO.addVIP(vip);
 	}
 

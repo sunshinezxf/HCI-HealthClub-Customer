@@ -1,3 +1,4 @@
+<%@page import="util.Prompt"%>
 <%@ page language="java" contentType="text/html; utf-8"
 	pageEncoding="utf-8"%>
 <%@ taglib prefix="s" uri="/struts-tags"%>
@@ -36,15 +37,21 @@
 	<div class="grid-layout module">
 		<strong>Login</strong>
 		<%
-			String prompt = (String) session.getAttribute("prompt");
-			if ((prompt == null) || prompt.equals("")) {
-			} else {
+			Prompt prompt = (Prompt) request.getAttribute("prompt");
+			if (prompt != null) {
+				if (prompt.getState() == true) {
 		%>
 		<div class="alert alert-success">
-			<h1><%=prompt%></h1>
+			<h1><%=prompt.getMessage()%></h1>
 		</div>
 		<%
-			session.removeAttribute("prompt");
+			} else {
+		%>
+		<div class="alert alert-danger">
+			<h1><%=prompt.getMessage()%></h1>
+		</div>
+		<%
+			}
 			}
 		%>
 		<hr>

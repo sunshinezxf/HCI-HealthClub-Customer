@@ -2,12 +2,13 @@ package dao;
 
 import java.util.ArrayList;
 
+import util.Prompt;
 import model.Activity;
 import model.VIP;
 import model.card.VIPCard;
 
 public interface VIPDAO {
-	public boolean addVIP(VIP vip);
+	public Prompt addVIP(VIP vip);
 
 	public boolean deleteVIP(String username);
 

@@ -2,13 +2,14 @@ package service;
 
 import java.util.ArrayList;
 
+import util.Prompt;
 import model.Activity;
 import model.VIP;
 import model.card.HomeVIPCard;
 import model.card.VIPCard;
 
 public interface VIPService {
-	public boolean registerVIP(VIP vip);
+	public Prompt registerVIP(VIP vip);
 
 	public boolean login(String username, String password);
 

@@ -7,6 +7,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Date;
 
+import util.Prompt;
 import model.Activity;
 import model.CreditCard;
 import model.Gender;
@@ -31,7 +32,7 @@ public class VIPDAOImpl implements VIPDAO {
 		this.baseDAO = baseDAO;
 	}
 
-	public boolean addVIP(VIP vip) {
+	public Prompt addVIP(VIP vip) {
 		Connection connection = baseDAO.getConnection();
 		PreparedStatement ps = null;
 		String username = vip.getUsername();
@@ -55,14 +56,14 @@ public class VIPDAOImpl implements VIPDAO {
 			ps.setString(8, address);
 			int i = ps.executeUpdate();
 			if (i > 0)
-				return true;
+				return new Prompt(true, "register success");
 		} catch (SQLException e) {
 			e.printStackTrace();
 		} finally {
 			baseDAO.closePreparedStatement(ps);
 			baseDAO.closeConnection(connection);
 		}
-		return false;
+		return new Prompt(false, "phone number existed");
 	}
 
 	public boolean deleteVIP(String username) {
