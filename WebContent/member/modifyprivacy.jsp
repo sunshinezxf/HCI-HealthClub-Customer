@@ -67,11 +67,15 @@
 					<div class="information">
 						<h4>Gender:&nbsp;</h4>
 						<div class="form-register-gender">
-							<input type="radio" name="gender" value="male" name="gender" />&nbsp;
+							<input type="radio" name="gender" value="male" name="gender"
+								<%=(vip.getGender() == Gender.MALE) ? "checked=\"checked\""
+						: ""%> />&nbsp;
 							&nbsp;Male
 						</div>
 						<div class="form-register-gender">
-							<input type="radio" name="gender" value="female" name="gender" />&nbsp;
+							<input type="radio" name="gender" value="female" name="gender"
+								<%=(vip.getGender() == Gender.FEMALE) ? "checked=\"checked\""
+						: ""%> />&nbsp;
 							&nbsp;Female
 						</div>
 					</div>
