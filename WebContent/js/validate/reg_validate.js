@@ -66,7 +66,7 @@ function validate_phone() {
 function checkAge() {
 	var age_prompt = document.getElementById("reg_age_span");
 	if (validate_age()) {
-		age_prompt.innerHTML = "you are within the age limitation";
+		age_prompt.innerHTML = "within age limitation";
 		age_prompt.setAttribute("class", "alert alert-info right_span");
 	} else {
 		age_prompt.innerHTML = "age must be between 10 ~ 60";

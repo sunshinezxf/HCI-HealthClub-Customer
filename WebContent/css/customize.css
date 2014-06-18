@@ -166,3 +166,9 @@ footer {
 .box {
 	width: 100%;
 }
+
+.withdraw {
+	postion: relative;
+	width: 30%;
+	margin: 0 7%;
+}
