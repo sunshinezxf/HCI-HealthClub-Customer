@@ -82,7 +82,9 @@
 							Credit No:&nbsp;<%=vip.getCreditCard().getCr_no()%>&nbsp;
 							Balance:&nbsp;<%=vip.getCreditCard().getBalance()%></h4>
 					</div>
-					<s:a cssClass="btn btn-lg btn-primary"
+					<a class="btn btn-lg btn-primary privacy"
+						href="<s:url value="/member/index.jsp"></s:url>">Back</a>
+					<s:a cssClass="btn btn-lg btn-primary privacy"
 						action="requestmodifyprivacy" namespace="/action">Modify</s:a>
 				</div>
 			</div>
