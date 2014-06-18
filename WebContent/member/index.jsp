@@ -87,10 +87,10 @@
 					</div>
 					<div class="col-6 col-sm-6 col-lg-4">
 						<h2>
-							<s:a>
+							<s:a action="requestwithdraw">
 								<s:param name="v_id" value="%{#session.vip.v_id}"></s:param>Withdraw VIP</s:a>
 						</h2>
-						<p>Here you can check out all your payment record.</p>
+						<p>Here you can withdraw your account.</p>
 					</div>
 				</div>
 			</div>

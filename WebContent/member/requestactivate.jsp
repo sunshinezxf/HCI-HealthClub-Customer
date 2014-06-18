@@ -92,7 +92,7 @@
 					<s:a cssClass="list-group-item" action="viewpayment"
 						namespace="/action">
 						<s:param name="v_id" value="%{#session.vip.v_id}"></s:param>Payment &nbsp;Record</s:a>
-					<s:a cssClass="list-group-item" action="" namespace="/action">
+					<s:a cssClass="list-group-item" action="requestwithdraw" namespace="/action">
 						<s:param name="v_id" value="%{#session.vip.v_id}"></s:param>Withdraw &nbsp;VIP</s:a>
 				</s:div>
 			</s:div>

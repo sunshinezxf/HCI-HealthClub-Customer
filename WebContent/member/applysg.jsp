@@ -86,7 +86,10 @@
 						<s:param name="v_id" value="%{#request.card.v_id}"></s:param>Activity &nbsp;Record</s:a>
 					<s:a cssClass="list-group-item" action="viewpay"
 						namespace="/action">
-						<s:param name="v_id" value="%{#request.card.v_id}"></s:param>Payment &nsbp;Record</s:a>
+						<s:param name="v_id" value="%{#request.card.v_id}"></s:param>Payment &nbsp;Record</s:a>
+					<s:a cssClass="list-group-item" action="requestwithdraw"
+						namespace="/action">
+						<s:param name="v_id" value="%{#session.vip.v_id}"></s:param>Withdraw &nbsp;VIP</s:a>
 				</div>
 			</div>
 		</div>
