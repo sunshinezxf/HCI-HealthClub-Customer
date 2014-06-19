@@ -14,8 +14,6 @@
 <link rel="stylesheet" href="<s:url value="/css/bootstrap.css"></s:url>" />
 
 <!-- add by xia -->
-<link href="<%=request.getContextPath()%>/css/bootstrap.min.css"
-	rel="stylesheet">
 <link
 	href="<%=request.getContextPath()%>/css/bootstrap-responsive.min.css"
 	rel="stylesheet">
@@ -58,9 +56,11 @@
 		</s:div>
 	</s:div>
 
-	<div class="container" style="position:fixed;left:10%;top:15%; ">
-	<center><h1>Health Club</h1></center>
-	<br><br><br><br><br><br><br>
+	<div class="container" style="position: relative; top: 15%;">
+		<h1
+			style="position: relative; text-align: center; margin: 15% 10% 0 10%">Health
+			Club</h1>
+		<br> <br>
 		<div class="carousel slide" id="carousel-195940">
 			<ol class="carousel-indicators">
 				<li class="active" data-slide-to="0" data-target="#carousel-195940"></li>
