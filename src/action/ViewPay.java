@@ -21,6 +21,7 @@ public class ViewPay extends BaseAction {
 	public String execute() throws Exception {
 		int vip_id = Integer.parseInt(v_id);
 		ArrayList<PayRecord> recordList = payRecordService.getPayRecord(vip_id);
+		
 		if (recordList == null || recordList.size() == 0) {
 			return "failure";
 		} else {
