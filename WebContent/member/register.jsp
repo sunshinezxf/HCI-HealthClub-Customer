@@ -60,7 +60,7 @@
 				<input type="text" class="form-control" placeholder="Name"
 					name="name" id="reg_name" style="ime-mode: disabled"
 					onkeyup="this.value=this.value.replace(/[\u4e00-\u9fa5]/g,'')"
-					onchange=checkName() />
+					onchange=checkName() autofocus="autofocus" />
 				<span id="reg_name_span"></span>
 			</s:div>
 			<s:div cssClass="box">

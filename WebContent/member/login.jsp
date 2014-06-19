@@ -61,7 +61,7 @@
 			<s:div cssClass="box">
 				<input type="text" class="form-control" placeholder="Login Username"
 					name="username" id="username" onkeypress=keypress()
-					onchange=checkUsername() />
+					onchange=checkUsername() autofocus="autofocus" />
 				<span id="username_span" class="right_span"></span>
 			</s:div>
 			<s:div cssClass="box">
