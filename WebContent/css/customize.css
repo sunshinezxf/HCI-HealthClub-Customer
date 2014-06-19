@@ -80,6 +80,7 @@
 
 html,body {
 	overflow-x: hidden; /* Prevent scroll on narrow devices */
+	background-attachment: fixed;
 }
 
 body {
@@ -154,7 +155,7 @@ footer {
 	margin: 10px;
 }
 
-.login, .rg {
+.login,.rg {
 	width: 70%;
 }
 
