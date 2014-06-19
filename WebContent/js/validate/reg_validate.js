@@ -169,7 +169,7 @@ function checkConfirm() {
 		con_passwd_prompt.innerHTML = "OK, remember password";
 		con_passwd_prompt.setAttribute("class", "alert alert-info right_span");
 	} else {
-		con_passwd_prompt.innerHTML = "Oops, confirm your password";
+		con_passwd_prompt.innerHTML = "Oops, re-confirm password";
 		con_passwd_prompt
 				.setAttribute("class", "alert alert-danger right_span");
 	}

@@ -51,41 +51,45 @@
 					</h1>
 					<p>You can check your registration data here.</p>
 				</div>
-				<div class="layout module card">
-					<div class="information">
-						<h4>
-							Username:&nbsp;<%=vip.getUsername()%></h4>
+				<div class="layout module">
+					<h3>Your Registration Data are as follows:</h3>
+					<div class="layout card">
+						<div class="information">
+							<h4>
+								Username:&nbsp;<%=vip.getUsername()%></h4>
+						</div>
+						<div class="information">
+							<h4>
+								Name:&nbsp;<%=vip.getName()%></h4>
+						</div>
+						<div class="information">
+							<h4>
+								Gender:&nbsp;<%=(vip.getGender() == Gender.MALE) ? "male" : "female"%>
+							</h4>
+						</div>
+						<div class="information">
+							<h4>
+								Cellphone:&nbsp;<%=vip.getPhone().getNo()%></h4>
+						</div>
+						<div class="information">
+							<h4>
+								Age:&nbsp;<%=vip.getAge()%></h4>
+						</div>
+						<div class="information">
+							<h4>
+								Address:&nbsp;<%=vip.getAddress()%></h4>
+						</div>
+						<div class="information">
+							<h4>
+								Credit No:&nbsp;<%=vip.getCreditCard().getCr_no()%>&nbsp;
+								Balance:&nbsp;<%=vip.getCreditCard().getBalance()%></h4>
+						</div>
+						<a class="btn btn-lg btn-primary privacy"
+							href="<s:url value="/member/index.jsp"></s:url>">Back</a>
+						<s:a cssClass="btn btn-lg btn-primary privacy"
+							action="requestmodifyprivacy" namespace="/action">Modify</s:a>
+						<br> <br>
 					</div>
-					<div class="information">
-						<h4>
-							Name:&nbsp;<%=vip.getName()%></h4>
-					</div>
-					<div class="information">
-						<h4>
-							Gender:&nbsp;<%=(vip.getGender() == Gender.MALE) ? "male" : "female"%>
-						</h4>
-					</div>
-					<div class="information">
-						<h4>
-							Cellphone:&nbsp;<%=vip.getPhone().getNo()%></h4>
-					</div>
-					<div class="information">
-						<h4>
-							Age:&nbsp;<%=vip.getAge()%></h4>
-					</div>
-					<div class="information">
-						<h4>
-							Address:&nbsp;<%=vip.getAddress()%></h4>
-					</div>
-					<div class="information">
-						<h4>
-							Credit No:&nbsp;<%=vip.getCreditCard().getCr_no()%>&nbsp;
-							Balance:&nbsp;<%=vip.getCreditCard().getBalance()%></h4>
-					</div>
-					<a class="btn btn-lg btn-primary privacy"
-						href="<s:url value="/member/index.jsp"></s:url>">Back</a>
-					<s:a cssClass="btn btn-lg btn-primary privacy"
-						action="requestmodifyprivacy" namespace="/action">Modify</s:a>
 				</div>
 			</div>
 			<div class="col-xs-6 col-sm-3 sidebar-offcanvas" id="sidebar">

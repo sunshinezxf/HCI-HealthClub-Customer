@@ -126,10 +126,7 @@
 					%>
 					<s:a cssClass="btn btn-lg btn-primary" action="applysg"
 						namespace="/action">
-						<s:param name="v_id" value="%{#session.vip.v_id}"></s:param>Apply SG Card</s:a>
-					<s:a cssClass="btn btn-lg btn-primary" action="applyhm"
-						namespace="/action">
-						<s:param name="v_id" value="%{#session.vip.v_id}"></s:param>Apply HM Card</s:a>
+						<s:param name="v_id" value="%{#session.vip.v_id}"></s:param>Apply New Card</s:a>
 				</div>
 			</div>
 			<div class="col-xs-6 col-sm-3 sidebar-offcanvas" id="sidebar">
