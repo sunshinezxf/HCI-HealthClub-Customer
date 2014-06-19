@@ -32,7 +32,7 @@
 		</action>
 		<action name="viewpay" class="action.ViewPay">
 			<result name="success">/member/viewpay.jsp</result>
-			<result name="failure">/member/index.jsp</result>
+			<result name="failure">/member/viewpay.jsp</result>
 		</action>
 		<action name="requestwithdraw" class="action.RequestWithdraw">
 			<result name="success">/member/confirmwithdraw.jsp</result>
