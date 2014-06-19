@@ -69,6 +69,10 @@
 			<result name="success">/member/success.jsp</result>
 			<result name="failure">/member/failure.jsp</result>
 		</action>
+		<action name="findpass" class="action.FindPassword">
+			<result name="success">/member/login.jsp</result>
+			<result name="failure">/member/findpassword.jsp</result>
+		</action>
 		<action name="quit" class="action.Quit">
 			<result name="success">/index.jsp</result>
 		</action>
@@ -123,5 +127,6 @@
 			<result name="success">/manager/clubview.jsp</result>
 			<result name="failure">/manager/index.jsp</result>
 		</action>
+		
 	</package>
 </struts>

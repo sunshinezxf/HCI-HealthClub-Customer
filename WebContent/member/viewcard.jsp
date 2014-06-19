@@ -92,7 +92,7 @@
 										Already Activated
 									</s:if>
 									<s:else>
-										Not Yet Activated<s:a cssClass="activate"
+										Not Yet Activated<s:a cssClass="btn btn-lg btn-primary activate"
 											action="requestactivate" namespace="/action">
 											<s:param name="c_id" value="vip.cardList.get(#st.index).c_id"></s:param>
 											<s:param name="v_id" value="vip.v_id"></s:param>activate</s:a>
@@ -104,7 +104,7 @@
 										Already Payed This Month
 									</s:if>
 									<s:else>
-										Not Yet Payed<s:a cssClass="activate" action="requestpay"
+										Not Yet Payed<s:a cssClass="btn btn-lg btn-primary activate" action="requestpay"
 											namespace="/action">
 											<s:param name="c_id" value="vip.cardList.get(#st.index).c_id"></s:param>
 											<s:param name="v_id" value="vip.v_id"></s:param>pay</s:a>

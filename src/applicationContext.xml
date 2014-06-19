@@ -104,6 +104,11 @@
 			<ref bean="CardService" />
 		</property>
 	</bean>
+	<bean id="action.FindPassword" class="action.FindPassword">
+		<property name="vipService">
+			<ref bean="VIPService" />
+		</property>
+	</bean>
 	<bean id="RequestModifyPrivacy" class="action.RequestModifyPrivacy">
 		<property name="VIPService">
 			<ref bean="VIPService" />

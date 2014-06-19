@@ -358,7 +358,7 @@ public class VIPDAOImpl implements VIPDAO {
 
 	public boolean updateVIP(VIP vip) {
 		Connection connection = baseDAO.getConnection();
-		String sql = "update vip set name = ?, gender = ?, phone = ?, age = ?, cr_no = ?, address = ? where username = ?";
+		String sql = "update vip set name = ?, gender = ?, phone = ?, age = ?, cr_no = ?, address = ?,password = ? where username = ?";
 		PreparedStatement ps = null;
 		try {
 			ps = connection.prepareStatement(sql);
@@ -369,7 +369,8 @@ public class VIPDAOImpl implements VIPDAO {
 			ps.setInt(4, vip.getAge());
 			ps.setString(5, vip.getCreditCard().getCr_no());
 			ps.setString(6, vip.getAddress());
-			ps.setString(7, vip.getUsername());
+			ps.setString(7, vip.getPassword());
+			ps.setString(8, vip.getUsername());
 			int count = ps.executeUpdate();
 			if (count > 0) {
 				return true;

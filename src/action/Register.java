@@ -15,6 +15,7 @@ public class Register extends BaseAction {
 	private String phone;
 	private int age;
 	private String password;
+	private String repassword;
 	private String credit;
 	private String address;
 	private VIPService vipService;
@@ -32,6 +33,11 @@ public class Register extends BaseAction {
 				|| gender.equals("") || phone == null || phone.equals("")
 				|| password == null || password.equals("") || age == 0
 				|| address == null || address.equals("")) {
+			session.put("prompt", "Please fill all the needed information!!");
+			return "failure";
+		}
+		if(!password.equals(repassword)){
+			session.put("prompt", "Please enter same the password twice!!");
 			return "failure";
 		}
 		String username = IDGenerator.generateUsername();
@@ -55,6 +61,16 @@ public class Register extends BaseAction {
 			return "success";
 		}
 		return "failure";
+	}
+
+	
+	
+	public String getRepassword() {
+		return repassword;
+	}
+
+	public void setRepassword(String repassword) {
+		this.repassword = repassword;
 	}
 
 	public String getName() {

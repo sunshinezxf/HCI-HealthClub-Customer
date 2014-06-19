@@ -1,6 +1,6 @@
 package action;
 
-import model.VIP;
+import model.VIP; 
 import service.VIPService;
 import util.Encryption;
 
@@ -24,9 +24,14 @@ public class Login extends BaseAction {
 		boolean status = vipService.login(login_username, login_password);
 		if (status) {
 			VIP vip = vipService.checkVIP("username", login_username);
+			if(vip == null)
+				vip = vipService.checkVIP("phone", login_username);
 			session.put("vip", vip);
+			session.remove("prompt");
 			return "success";
 		} else {
+			session.remove("prompt");
+			session.put("prompt", "The username or password is wrong.Please enter again!");
 			return "failure";
 		}
 	}

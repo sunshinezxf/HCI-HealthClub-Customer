@@ -13,9 +13,35 @@
 	href="<s:url value="/material/logo.ico"></s:url>" />
 <link rel="stylesheet" href="<s:url value="/css/bootstrap.css"></s:url>" />
 <link rel="stylesheet" href="<s:url value="/css/customize.css"></s:url>" />
+<script type="text/javascript">
+function validate(){
+	var name=document.getElementsByName("name")[0].value;
+	var phone=document.getElementsByName("phone")[0].value;
+	var credit=document.getElementsByName("credit")[0].value;
+	var address=document.getElementsByName("address")[0].value;
+	var password=document.getElementsByName("password")[0].value;
+	var repassword=document.getElementsByName("repassword")[0].value;
+	alert(name+","+phone+","+credit+",");
+	var form = document.getElementById("registerForm");
+	
+	if(name!=""&&phone!=""&&credit!=""&&address!=""&&password!=""&&repassword!=""){
+		form.submitted = true;
+		document.getElementById("submit").style.background = "blue";
+	}else{
+		form.submitted = false;
+		document.getElementById("submit").style.background = "grey";
+	}
+	
+}
+
+function init(){
+	var form = document.getElementById("registerForm");
+	form.submitted = false;
+}
+</script>
 <title>Health Club--register</title>
 </head>
-<body>
+<body ONLOAD="init();">
 	<div class="navbar navbar-inverse navbar-fixed-top">
 		<div class="container">
 			<div class="navbar-header">
@@ -31,34 +57,48 @@
 			</div>
 		</div>
 	</div>
-	<div class="grid-layout module">
+	<div style="margin-right:30%">
+	<div class="grid-layout module" >
 		<strong>Register</strong>
+		<%
+			String prompt = (String) session.getAttribute("prompt");
+			if ((prompt == null) || prompt.equals("")) {
+			} else {
+		%>
+		<div class="alert alert-success">
+			<h1><%=prompt%></h1>
+		</div>
+		<%
+			session.removeAttribute("prompt");
+			}
+		%>
 		<hr>
-		<s:form cssClass="form-register" action="register" name="register"
+		<s:form id="registerForm" cssClass="form-register" action="register" name="register"
 			method="post" namespace="/action">
 			<span>Please fill you information</span>
 			<input type="text" class="form-control" placeholder="Name"
-				name="name" />
+				name="name" / onChange="validate()">
 			<div class="form-register-gender">
-				<input type="radio" name="gender" value="male" />&nbsp; &nbsp;Male
+				<input type="radio" name="gender" value="male" / onClick="validate();">&nbsp; &nbsp;Male
 			</div>
 			<div class="form-register-gender">
-				<input type="radio" name="gender" value="female" />&nbsp;
-				&nbsp;Female
+				<input type="radio" name="gender" value="female" onClick="validate()"/>&nbsp;&nbsp;Female
 			</div>
 			<input type="text" class="form-control" placeholder="Cellphone"
-				name="phone" />
-			<input type="text" class="form-control" placeholder="Age" name="age" />
+				name="phone" onChange="validate()"/>
+			<input type="text" class="form-control" placeholder="Age" name="age" onChange="validate()"/>
 			<input type="text" class="form-control" placeholder="Address"
-				name="address">
+				name="address" onChange="validate()">
 			<input type="text" class="form-control" placeholder="Credit Card"
-				name="credit" />
+				name="credit" onChange="validate()"/>
 			<input type="password" class="form-control" placeholder="Password"
-				name="password" />
-			<button class="btn btn-lg btn-primary btn-block button-commit"
-				type="submit">Register</button>
+				name="password" onChange="validate()"/>
+			<input type="password" class="form-control" placeholder="Confirm your Password"
+				name="repassword" onChange="validate()"/>
+			<center><button class="btn btn-lg btn-primary btn-block button-commit"
+				type="submit" id="submit">Register</button></center>
 		</s:form>
 	</div>
-
+</div>
 </body>
 </html>

@@ -15,6 +15,19 @@
 <link rel="stylesheet" href="<s:url value="/css/customize.css"></s:url>" />
 <link rel="stylesheet"
 	href="<s:url value="/css/bootstrap-theme.min.css"></s:url>" />
+<script type="text/javascript">
+function validate(node){
+	var content = node.value;
+	var contentReg1 = /^[\d]{8}$/;
+	var contentReg2 = /^[\d]{11}$/;
+	
+	if(!(contentReg1.test(content)||contentReg2.test(content))){
+		document.getElementById("nameTip").innerHTML = "Please Enter a Valid Username!";
+	}else{
+		document.getElementById("nameTip").innerHTML = "";
+	}
+}
+</script>
 <title>Health Club--login</title>
 </head>
 <body>
@@ -33,6 +46,7 @@
 			</div>
 		</div>
 	</div>
+	<div style="margin-right:30%">
 	<div class="grid-layout module">
 		<strong>Login</strong>
 		<%
@@ -51,13 +65,15 @@
 		<s:form cssClass="form-register" action="login" name="login"
 			method="post" namespace="/action">
 			<span>Please input your login username and password</span>
-			<input type="text" class="form-control" placeholder="Login Username"
-				name="username" />
+			<input type="text" class="form-control" placeholder="Login Username or Your Telephone Number" 
+				name="username" onchange="validate(this);"/><span style="color:red;" id="nameTip"></span>
 			<input type="password" class="form-control"
 				placeholder="Login Password" name="password" />
+				<a class="activate" href="<s:url value="/member/findpassword.jsp"></s:url>" style="float:right;">Forget password?</a>
 			<button class="btn btn-lg btn-primary btn-block button-commit"
 				type="submit">Login</button>
 		</s:form>
+	</div>
 	</div>
 </body>
 </html>

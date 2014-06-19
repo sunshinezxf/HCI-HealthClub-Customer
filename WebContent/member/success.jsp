@@ -59,6 +59,9 @@
 					<s:div cssClass="alert alert-success">
 						<h1><%=prompt%></h1>
 					</s:div>
+					<center><s:a cssClass="btn btn-lg btn-primary activate" action="viewactivity"
+						namespace="/action">
+						<s:param name="v_id" value="%{#session.vip.v_id}"></s:param>点击这里返回</s:a></center>
 				</s:div>
 			</s:div>
 			<div class="col-xs-6 col-sm-3 sidebar-offcanvas" id="sidebar">

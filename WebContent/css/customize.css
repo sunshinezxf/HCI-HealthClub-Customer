@@ -72,6 +72,8 @@
 
 .button-commit {
 	margin: 10px;
+	padding: 10px;
+	width:auto;
 }
 
 html,body {
