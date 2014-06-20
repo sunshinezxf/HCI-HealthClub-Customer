@@ -40,4 +40,10 @@ public interface VIPService {
 	public boolean reserve(int ac_id, int v_id);
 	
 	public boolean cancelActivity(int ac_id, int v_id);
+	
+	public boolean validateTele(String phone);
+	
+	public VIP getNewPassword(String phone);
+	
+	public boolean queryActivated(int v_id);
 }

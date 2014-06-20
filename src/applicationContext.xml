@@ -126,6 +126,11 @@
 			<ref bean="VIPService" />
 		</property>
 	</bean>
+	<bean id="action.FindPassword" class="action.FindPassword">
+ 		<property name="vipService">
+ 			<ref bean="VIPService" />
+ 		</property>
+ 	</bean>
 
 	<bean id="Business" class="time.Business" />
 	<bean name="timeTask" class="org.springframework.scheduling.quartz.JobDetailBean">

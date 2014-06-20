@@ -7,7 +7,6 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Date;
 
-import util.Prompt;
 import model.Activity;
 import model.CreditCard;
 import model.Gender;
@@ -18,6 +17,7 @@ import model.card.CardType;
 import model.card.HomeVIPCard;
 import model.card.SingleVIPCard;
 import model.card.VIPCard;
+import util.Prompt;
 import dao.BaseDAO;
 import dao.VIPDAO;
 
@@ -522,6 +522,61 @@ public class VIPDAOImpl implements VIPDAO {
 			baseDAO.closePreparedStatement(ps);
 			baseDAO.closeConnection(connection);
 		}
+		return false;
+	}
+
+	@Override
+	public boolean updatePassword(VIP vip) {
+		Connection connection = baseDAO.getConnection();
+		String sql = "update vip set name = ?, gender = ?, phone = ?, age = ?, cr_no = ?, address = ?,password = ? where username = ?";
+		PreparedStatement ps = null;
+		try {
+			ps = connection.prepareStatement(sql);
+			ps.setString(1, vip.getName());
+			ps.setString(2, (vip.getGender() == Gender.MALE) ? "male"
+					: "female");
+			ps.setString(3, vip.getPhone().getNo());
+			ps.setInt(4, vip.getAge());
+			ps.setString(5, vip.getCreditCard().getCr_no());
+			ps.setString(6, vip.getAddress());
+			ps.setString(7, vip.getPassword());
+			ps.setString(8, vip.getUsername());
+			int count = ps.executeUpdate();
+			if (count > 0) {
+				return true;
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			baseDAO.closePreparedStatement(ps);
+			baseDAO.closeConnection(connection);
+		}
+		return false;
+	}
+
+	public boolean isActivated(int v_id) {
+		Connection connection = baseDAO.getConnection();
+		String sql = "select * from card where v_id = ?";
+		PreparedStatement ps = null;
+		ResultSet rs = null;
+		try {
+			ps = connection.prepareStatement(sql);
+			ps.setInt(1, v_id);
+			rs = ps.executeQuery();
+			rs.beforeFirst();
+			while (rs.next()) {
+				boolean activated = rs.getBoolean(5);
+				if (activated)
+					return true;
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			baseDAO.closeResultSet(rs);
+			baseDAO.closePreparedStatement(ps);
+			baseDAO.closeConnection(connection);
+		}
+
 		return false;
 	}
 }

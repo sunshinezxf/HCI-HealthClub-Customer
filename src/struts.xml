@@ -25,6 +25,7 @@
 		<action name="reserveactivity" class="action.ReserveActivity">
 			<result name="success">/member/success.jsp</result>
 			<result name="failure">/member/failure.jsp</result>
+			<result name="notactivated">/member/cardactivated.jsp</result>
 		</action>
 		<action name="cancelactivity" class="action.CancelActivity">
 			<result name="success">/member/success.jsp</result>
@@ -75,6 +76,10 @@
 		</action>
 		<action name="quit" class="action.Quit">
 			<result name="success">/index.jsp</result>
+		</action>
+		<action name="findpass" class="action.FindPassword">
+			<result name="success">/member/login.jsp</result>
+			<result name="failure">/member/findpassword.jsp</result>
 		</action>
 
 		<action name="attendantlogin" class="AttendantLogin">

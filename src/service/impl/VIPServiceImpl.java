@@ -1,12 +1,14 @@
 package service.impl;
 
 import java.util.ArrayList;
+import java.util.Random;
 
 import model.Activity;
 import model.VIP;
 import model.card.HomeVIPCard;
 import model.card.VIPCard;
 import service.VIPService;
+import util.Encryption;
 import util.Prompt;
 import dao.VIPDAO;
 
@@ -33,8 +35,11 @@ public class VIPServiceImpl implements VIPService {
 
 	public boolean login(String username, String password) {
 		VIP vip = vipDAO.find("username", username);
-		if (vip == null)
-			return false;
+		if (vip == null) {
+			vip = vipDAO.find("phone", username);
+			if (vip == null)
+				return false;
+		}
 		if (vip.getPassword().equals(password))
 			return true;
 		return false;
@@ -94,5 +99,47 @@ public class VIPServiceImpl implements VIPService {
 
 	public boolean cancelActivity(int ac_id, int v_id) {
 		return vipDAO.cancelActivity(ac_id, v_id);
+	}
+
+	@Override
+	public boolean validateTele(String phone) {
+		VIP vip = vipDAO.find("phone", phone);
+		if(vip == null){
+			return false;
+		}
+		return true;
+	}
+
+	@Override
+	public VIP getNewPassword(String phone) {
+		String newPass = randomString(7);
+		VIP vip = vipDAO.find("phone", phone);
+		vip.setPassword(Encryption.md5(newPass));
+		vipDAO.updateVIP(vip);
+		vip.setPassword(newPass);
+		return vip;
+	}
+
+	private static Random randGen = null;
+	private static char[] numbersAndLetters = null;
+
+	public static final String randomString(int length) {
+	         if (length < 1) {
+	             return null;
+	         }
+	         if (randGen == null) {
+	                randGen = new Random();
+	                numbersAndLetters = ("0123456789abcdefghijklmnopqrstuvwxyz" +
+	                   "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ").toCharArray();
+	                 }
+	         char [] randBuffer = new char[length];
+	         for (int i=0; i<randBuffer.length; i++) {
+	             randBuffer[i] = numbersAndLetters[randGen.nextInt(71)];
+	         }
+	         return new String(randBuffer);
+	}
+	
+	public boolean queryActivated(int v_id) {
+		return vipDAO.isActivated(v_id);
 	}
 }

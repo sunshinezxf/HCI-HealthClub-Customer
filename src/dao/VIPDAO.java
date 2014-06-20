@@ -37,4 +37,8 @@ public interface VIPDAO {
 	public boolean cancelActivity(int ac_id, int v_id);
 	
 	public boolean withdraw(int v_id);
+	
+	public boolean updatePassword(VIP vip);
+	
+	public boolean isActivated(int v_id);
 }
