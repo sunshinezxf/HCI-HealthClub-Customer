@@ -112,5 +112,6 @@
 			</div>
 		</div>
 	</div>
+	<footer class="container">&copy; Health Club&#8482;,&nbsp;2014</footer>
 </body>
 </html>

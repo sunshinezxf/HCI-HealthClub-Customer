@@ -52,15 +52,15 @@
 						can do here.</p>
 				</div>
 				<div class="row">
-					<div class="col-6 col-sm-6 col-lg-4">
+					<div class="col-6 col-sm-6 col-lg-4" style="background-color:#FFFFCC">
 						<h2>
-							<s:a action="viewcard" namespace="/action">
+							<s:a action="viewcard" namespace="/action" >
 								<s:param name="v_id" value="%{#session.vip.v_id}"></s:param>Membership Card</s:a>
 						</h2>
 						<p>You can either apply for a new one or check out all that
 							you already have.</p>
 					</div>
-					<div class="col-6 col-sm-6 col-lg-4">
+					<div class="col-6 col-sm-6 col-lg-4" style="background-color:#D1F0EF">
 						<h2>
 							<s:a action="viewprivacy" namespace="/action">
 								<s:param name="v_id" value="%{#session.vip.v_id}"></s:param>
@@ -70,7 +70,7 @@
 						<p>Here you can check out your personal information and modify
 							them.</p>
 					</div>
-					<div class="col-6 col-sm-6 col-lg-4">
+					<div class="col-6 col-sm-6 col-lg-4" style="background-color:#FFFFCC">
 						<h2>
 							<s:a action="viewactivity" namespace="/action">
 								<s:param name="v_id" value="%{#session.vip.v_id}"></s:param>Activity Record</s:a>
@@ -78,14 +78,14 @@
 						<p>Here you can check out all the activities you have
 							participated in.</p>
 					</div>
-					<div class="col-6 col-sm-6 col-lg-4">
+					<div class="col-6 col-sm-6 col-lg-4" style="background-color:#D1F0EF">
 						<h2>
 							<s:a action="viewpay" namespace="/action">
 								<s:param name="v_id" value="%{#session.vip.v_id}"></s:param>Payment Record</s:a>
 						</h2>
 						<p>Here you can check out all your payment record.</p>
 					</div>
-					<div class="col-6 col-sm-6 col-lg-4">
+					<div class="col-6 col-sm-6 col-lg-4" style="background-color:#FFFFCC">
 						<h2>
 							<s:a action="requestwithdraw">
 								<s:param name="v_id" value="%{#session.vip.v_id}"></s:param>Withdraw VIP</s:a>
@@ -115,5 +115,6 @@
 			</div>
 		</div>
 	</div>
+	<footer class="container">&copy; Health Club&#8482;,&nbsp;2014</footer>
 </body>
 </html>

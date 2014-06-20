@@ -113,5 +113,6 @@
 		type="text/javascript">
 		
 	</script>
+	<footer class="container">&copy; Health Club&#8482;,&nbsp;2014</footer>
 </body>
 </html>

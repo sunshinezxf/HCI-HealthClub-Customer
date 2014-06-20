@@ -93,7 +93,8 @@
 									</s:if>
 									<s:else>
 										Not Yet Activated<s:a cssClass="activate"
-											action="requestactivate" namespace="/action">
+											style="text-decoration: underline;" action="requestactivate"
+											namespace="/action">
 											<s:param name="c_id" value="vip.cardList.get(#st.index).c_id"></s:param>
 											<s:param name="v_id" value="vip.v_id"></s:param>activate</s:a>
 									</s:else>
@@ -105,7 +106,7 @@
 									</s:if>
 									<s:else>
 										Not Yet Payed<s:a cssClass="activate" action="requestpay"
-											namespace="/action">
+											namespace="/action" style="text-decoration: underline;">
 											<s:param name="c_id" value="vip.cardList.get(#st.index).c_id"></s:param>
 											<s:param name="v_id" value="vip.v_id"></s:param>pay</s:a>
 									</s:else>
@@ -151,5 +152,6 @@
 			</div>
 		</div>
 	</div>
+	<footer class="container">&copy; Health Club&#8482;,&nbsp;2014</footer>
 </body>
 </html>

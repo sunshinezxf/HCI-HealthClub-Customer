@@ -1,6 +1,5 @@
-<%@page import="util.Prompt"%>
 <%@ page language="java" contentType="text/html; utf-8"
-	pageEncoding="utf-8"%>
+	pageEncoding="utf-8" import="util.Prompt"%>
 <%@ taglib prefix="s" uri="/struts-tags"%>
 <!DOCTYPE html>
 <html lang="en">
@@ -16,7 +15,20 @@
 <link rel="stylesheet" href="<s:url value="/css/customize.css"></s:url>" />
 <link rel="stylesheet"
 	href="<s:url value="/css/bootstrap-theme.min.css"></s:url>" />
-<title>Health Club--login</title>
+<script type="text/javascript">
+	function validate(node) {
+		var content = node.value;
+		var contentReg1 = /^[\d]{11}$/;
+		var contentReg2 = /^[\d]{11}$/;
+
+		if (!(contentReg1.test(content) || contentReg2.test(content))) {
+			document.getElementById("nameTip").innerHTML = "Please Enter a Valid phone number!";
+		} else {
+			document.getElementById("nameTip").innerHTML = "";
+		}
+	}
+</script>
+<title>Health Club--find password</title>
 </head>
 <body>
 	<div class="navbar navbar-inverse navbar-fixed-top">
@@ -34,53 +46,40 @@
 			</div>
 		</div>
 	</div>
-	<div class="grid-layout module">
-		<strong>Login</strong>
-		<%
+	
+		<div class="container module grid-layout">
+			<strong>find password</strong>
+			<%
 			Prompt prompt = (Prompt) request.getAttribute("prompt");
 			if (prompt != null) {
 				if (prompt.getState() == true) {
-		%>
-		<div class="alert alert-success">
-			<h1><%=prompt.getMessage()%></h1>
+			%>
+			<div class="alert alert-success">
+				<h1><%=prompt.getMessage()%></h1>
+			</div>
+			<%
+				} else {
+			%>
+			<div class="alert alert-danger">
+				<h1><%=prompt.getMessage()%></h1>
+			</div>
+			<%
+				}
+				}
+			%>
+			<hr>
+			<s:form cssClass="form-register" action="findpass" name="findpass"
+				method="post" namespace="/action">
+				<span>Please input your telephone number</span>
+				<input type="text" class="form-control"
+					placeholder="Your Telephone Number" name="phone"
+					onchange="validate(this);" />
+				<span style="color: red;" id="nameTip"></span>
+
+				<button class="btn btn-lg btn-primary btn-block button-commit login"
+					type="submit">confirm</button>
+			</s:form>
 		</div>
-		<%
-			} else {
-		%>
-		<div class="alert alert-danger">
-			<h1><%=prompt.getMessage()%></h1>
-		</div>
-		<%
-			}
-			}
-		%>
-		<hr>
-		<s:form cssClass="form-register" action="login" name="login"
-			method="post" namespace="/action">
-			<span>Please input your login username and password</span>
-			<s:div cssClass="box">
-				<input type="text" class="form-control" placeholder="Login Username"
-					name="username" id="username" onkeypress=keypress()
-					onchange=checkUsername() autofocus="autofocus" />
-				<span id="username_span" class="right_span"></span>
-			</s:div>
-			<s:div cssClass="box">
-				<input type="password" class="form-control"
-					placeholder="Login Password" name="password" id="password"
-					oninput=checkPassword() />
-				<span id="passwd_span"></span>
-			</s:div>
-			<button class="btn btn-lg btn-primary btn-block button-commit login"
-				disabled="disabled" type="submit" id="lgbtn">Login</button>
-			<a class="activate"
-				href="<s:url value="/member/findpassword.jsp"></s:url>"
-				style="float: right;">Forget password?</a>
-		</s:form>
-	</div>
-	<script src="<s:url value="/js/validate/login_validate.js"></s:url>"
-		type="text/javascript">
-		
-	</script>
 	<footer class="container">&copy; Health Club&#8482;,&nbsp;2014</footer>
 </body>
 </html>

@@ -71,22 +71,21 @@
 				<div class="item active">
 					<img alt="" src="<s:url value="/material/top/1.jpg"></s:url>">
 					<div class="carousel-caption">
-						<h4>第一张图</h4>
-						<p>~~</p>
+						<h4>You could do exercise just like walking along the beach ~</h4>
 					</div>
 				</div>
 				<div class="item">
 					<img alt="" src="<s:url value="/material/top/2.jpg"></s:url>">
 					<div class="carousel-caption">
-						<h4>第二张图</h4>
-						<p>！！！</p>
+						<h4>You could do exercise just like jogging along country
+							road ~</h4>
 					</div>
 				</div>
 				<div class="item">
 					<img alt="" src="<s:url value="/material/top/3.jpg"></s:url>">
 					<div class="carousel-caption">
-						<h4>第三张图</h4>
-						<p>%%%%</p>
+						<h4>You could do exercise just like traveling to the distance
+							~</h4>
 					</div>
 				</div>
 			</div>
@@ -95,4 +94,5 @@
 				href="#carousel-195940" class="right carousel-control">›</a>
 		</div>
 	</div>
+	<footer class="container">&copy; Health Club&#8482;,&nbsp;2014</footer>
 </html>
