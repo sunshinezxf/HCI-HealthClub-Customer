@@ -523,4 +523,31 @@ public class VIPDAOImpl implements VIPDAO {
 		}
 		return false;
 	}
+	
+	@SuppressWarnings("resource")
+	public boolean isActivated(int v_id) {
+		Connection connection = baseDAO.getConnection();
+		String sql = "select * from card where v_id = ?";
+		PreparedStatement ps = null;
+		ResultSet rs = null;
+		try {
+			ps = connection.prepareStatement(sql);
+			ps.setInt(1, v_id);
+			rs = ps.executeQuery();
+			rs.beforeFirst();
+			while(rs.next()) {
+				boolean activated = rs.getBoolean(5);
+				if(activated)
+					return true;
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}finally {
+			baseDAO.closeResultSet(rs);
+			baseDAO.closePreparedStatement(ps);
+			baseDAO.closeConnection(connection);
+		}
+		
+		return false;
+	}
 }

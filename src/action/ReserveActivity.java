@@ -19,6 +19,10 @@ public class ReserveActivity extends BaseAction {
 	public String execute() throws Exception {
 		int activity_id = Integer.parseInt(ac_id);
 		int vip_id = Integer.parseInt(v_id);
+		boolean activated = vipService.queryActivated(vip_id);
+		if(!activated) {
+			return "notactivated";
+		}
 		boolean status = vipService.reserve(activity_id, vip_id);
 		if (status) {
 			request.setAttribute("prompt",

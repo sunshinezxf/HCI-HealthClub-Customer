@@ -94,4 +94,8 @@ public class VIPServiceImpl implements VIPService {
 	public boolean cancelActivity(int ac_id, int v_id) {
 		return vipDAO.cancelActivity(ac_id, v_id);
 	}
+	
+	public boolean queryActivated(int v_id) {
+		return vipDAO.isActivated(v_id);
+	}
 }
