@@ -88,6 +88,9 @@ body {
 }
 
 footer {
+	width: 100%;
+	position: relative;
+	text-align: center;
 	padding: 30px 0;
 }
 
@@ -130,6 +133,7 @@ footer {
 .activate {
 	padding-left: 10px;
 	text-align: right;
+	font-style: italic;
 }
 
 .delete,.view {
