@@ -91,7 +91,7 @@ function validate_age() {
 function checkAddress() {
 	var addr_prompt = document.getElementById("reg_addr_span");
 	if (validate_address()) {
-		addr_prompt.innerHTML = "OK, you are from Earth";
+		addr_prompt.innerHTML = "good, you are from Earth";
 		addr_prompt.setAttribute("class", "alert alert-info right_span");
 	} else {
 		addr_prompt.innerHTML = "Address cannot be null";
