@@ -26,8 +26,6 @@
 	href="<%=request.getContextPath()%>/img/apple-touch-icon-72-precomposed.png">
 <link rel="apple-touch-icon-precomposed"
 	href="<%=request.getContextPath()%>/img/apple-touch-icon-57-precomposed.png">
-<link rel="shortcut icon"
-	href="<%=request.getContextPath()%>/img/favicon.png">
 
 <script type="text/javascript"
 	src="<%=request.getContextPath()%>/js/jquery.min.js"></script>

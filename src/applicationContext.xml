@@ -126,7 +126,7 @@
 			<ref bean="VIPService" />
 		</property>
 	</bean>
-	<bean id="action.FindPassword" class="action.FindPassword">
+	<bean id="FindPassword" class="action.FindPassword">
  		<property name="vipService">
  			<ref bean="VIPService" />
  		</property>
